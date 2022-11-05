@@ -16,7 +16,7 @@ export const DogsApp = () => {
 
   return (
     <>
-      <h1>GifExpertApp</h1>
+      <h1>Dogs Breeds Searcher</h1>
       <AddBreed
         onNewBreed={onAddBreed}
       />

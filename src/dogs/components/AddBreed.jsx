@@ -21,7 +21,7 @@ export const AddBreed = ({onNewBreed}) => {
     <form onSubmit={onSubmit} aria-label='form'>
       <input 
         type="text"
-        placeholder="Buscar gifs"
+        placeholder="¡Busca tu raza preferida!"
         value={inputValue}
         onChange={onInputChange}
       />
