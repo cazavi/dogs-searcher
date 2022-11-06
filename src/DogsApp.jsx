@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AddBreed, DogGrid } from "./dogs/components";
+import { AddBreed, DogGrid, BreedsList } from "./dogs/components";
 
 export const DogsApp = () => {
   const [breed, setBreed] = useState(["hound"]); // no usar condicionalmente los hooks
@@ -9,14 +9,22 @@ export const DogsApp = () => {
     // console.log(newCategory);
     // categories.push(newCategory);
     // setCategories(cat => [...cat, "Jojo's Bizarre Adventure"]);
-    setBreed([newBreed, ...breed]);
+    setBreed([newBreed]);
   };
 
   // console.log(categories)
 
   return (
     <>
+    <div className="container">
+      <div className="row justify-content-center">
       <h1>Dogs Breeds Searcher</h1>
+<div className="col-3">
+
+      <BreedsList/>
+</div>
+<div className="col-9">
+
       <AddBreed
         onNewBreed={onAddBreed}
       />
@@ -28,6 +36,10 @@ export const DogsApp = () => {
           />
           ))
         }
+</div>
+</div>
+      </div>
+
     </>
   );
 };

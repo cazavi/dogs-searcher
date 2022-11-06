@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import PropTypes from 'prop-types';
 
 export const AddBreed = ({onNewBreed}) => {
 
@@ -21,7 +20,7 @@ export const AddBreed = ({onNewBreed}) => {
     <form onSubmit={onSubmit} aria-label='form'>
       <input 
         type="text"
-        placeholder="¡Busca tu raza preferida!"
+        placeholder="¡O Busca aquí!"
         value={inputValue}
         onChange={onInputChange}
       />

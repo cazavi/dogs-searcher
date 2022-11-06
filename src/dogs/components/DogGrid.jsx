@@ -13,12 +13,13 @@ export const DogGrid = ({breed}) => { //no llamar funciones dentro de componente
         isLoading && (<h2>Cargando...</h2>)
       }
       <div className="container">
-        <div className="row">
+        <div className="row row-cols-3">
 
-      <div className="col-3">
+      {/* <div className="col"> */}
         {
           images.map((image, url) => (
             <DogItem 
+            className="col"
             key={url}
             {...image}    //recibo todas las props del objeto
           />
@@ -27,7 +28,7 @@ export const DogGrid = ({breed}) => { //no llamar funciones dentro de componente
       </div>
         </div>
 
-      </div>
+      {/* </div> */}
     </>
   )
 }
