@@ -7,13 +7,5 @@ export const getAllBreeds = async() => {     //al poner fuera las funciones es u
   // const {data} = await resp.json();
   const data = resp.data.message
   // console.log(data)
-
-
-  // (img => ({
-  //     id: img.id,
-  //     title: img.title,
-  //     url: img.images.downsized_medium.url
-  //   })
-  // )
   return data;
 }

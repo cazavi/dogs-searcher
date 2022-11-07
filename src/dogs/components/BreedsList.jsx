@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { AddBreed, DogGrid } from ".";
-import { getAllBreeds } from "../helpers/getAllBreeds";
-import { getSubBreeds } from "../helpers/getSubBreeds";
-// import { useForm } from "../hooks/useForm";
+import { getAllBreeds, getSubBreeds} from "../helpers";
 
 export const BreedsList = () => {
   const [breed, setBreed] = useState({}); // no usar condicionalmente los hooks
@@ -10,50 +8,60 @@ export const BreedsList = () => {
   const [selectedBreed, setSelectedBreed] = useState()
 
   
-
   const getBreeds = async() => {
     const data = await getAllBreeds();
     // const dogs = Object.keys(data)
     setBreed(data);
   }
+  const fetchBreeds = Object.keys(breed);
 
   const fetchSubBreeds = async ()=>{
-    const data = await getSubBreeds();
-    // const dogs = Object.keys(data)
-    // console.log("SUBBREED", data)
-    setSubBreed(data);
+    // const {pics} = getSubBreeds(breed)
+    const pics = await getSubBreeds();
+    console.log(pics)
+    console.log("SUBBREED", pics)
+    setSubBreed(pics);
   }
-console.log(subBreed)
+
+// console.log(subBreed)
   useEffect(() => {
     getBreeds();
     fetchSubBreeds();
     // return{} //este retorno es para hacer una limpieza
   }, []);
 
-  const handleChange = ({target}) => {
-    // setSelectedBreed(target.value)
-    console.log("ME SELECCIONASTE", target.value)
+
+  const handleChangeBreed = ({target}) => {
+    // // setSelectedBreed(target.value)
+    // setBreed(target.value)
+    console.log("SELECCIONASTE RAZA:", target.value)
     // console.log(, selectedBreed)
 }
 
+const handleChangeSubBreed = ({target}) => {
+  // setSelectedBreed(target.value)
+  console.log("SELECCIONASTE SUB-RAZA:", target.value)
+  // console.log(, selectedBreed)
+}
 
 
   return (
     <>
       <h4>Select a breed</h4>
       <div className="row row-cols-2 gap-3 m-2 justify-content-center">
-      <select  onChange={handleChange} className="bg-danger bg-gradient bg-opacity-50 col-sm-3 form-select-sm">
-        <option selected>Choose a breed</option>
+      <select  onChange={handleChangeBreed} className="bg-danger bg-gradient bg-opacity-50 col-sm-3 form-select-sm">
+        <option defaultValue>Choose a breed</option>
         {
-          Object.keys(breed).map((dog,index) => (
+          fetchBreeds.map((dog,index) => (
             // <ul>
               <option value={dog} key={index}  className="btn btn-light">{dog}</option>
             // </ul>
           ))
         }
       </select>
-      <select  className=" bg-danger bg-gradient bg-opacity-50 col-3 form-select-sm">
-      <option selected>Choose a sub-breed</option>
+
+      <select onChange={handleChangeSubBreed}  className=" bg-danger bg-gradient bg-opacity-50 col-3 form-select-sm">
+      <option defaultValue>Choose a sub-breed</option>
         
         {
           subBreed.map((dogs,index) => (
