@@ -17,14 +17,19 @@ export const AddBreed = ({onNewBreed}) => {
   }
 
   return (
+    <>
+    <div className="col-4 ">
+
     <form onSubmit={onSubmit} aria-label='form'>
-      <input 
+      <input className='form-control'
         type="text"
-        placeholder="¡O Busca aquí!"
+        placeholder="¡Busca aquí!"
         value={inputValue}
         onChange={onInputChange}
       />
     </form>  
+    </div>
+    </>
   )
 }
 

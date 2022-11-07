@@ -16,14 +16,14 @@ export const DogsApp = () => {
 
   return (
     <>
-    <div className="container">
+    <div className="container bg-light">
       <div className="row justify-content-center">
-      <h1>Dogs Breeds Searcher</h1>
-<div className="col-3">
+      <h1 className="header text-center kalam mt-3">DogsPedia</h1>
+{/* <div className="col-3"> */}
 
-      <BreedsList/>
-</div>
-<div className="col-9">
+{/* </div> */}
+<div className="col-12">
+      {/* <BreedsList/> */}
 
       <AddBreed
         onNewBreed={onAddBreed}

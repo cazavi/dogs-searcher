@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { AddBreed, DogGrid } from ".";
 import { getAllBreeds } from "../helpers/getAllBreeds";
+// import { useForm } from "../hooks/useForm";
 
 export const BreedsList = () => {
   const [breed, setBreed] = useState({}); // no usar condicionalmente los hooks
@@ -28,6 +29,7 @@ console.log(breed)
           ))
         }
       </select>
+      <DogGrid />
     </>
   );
   };

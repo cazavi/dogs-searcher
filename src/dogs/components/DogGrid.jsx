@@ -13,7 +13,7 @@ export const DogGrid = ({breed}) => { //no llamar funciones dentro de componente
         isLoading && (<h2>Cargando...</h2>)
       }
       <div className="container">
-        <div className="row row-cols-3">
+        <div className="row row-cols-4 justify-content-center">
 
       {/* <div className="col"> */}
         {
