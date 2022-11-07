@@ -2,5 +2,10 @@
 
 body{
   font-family: Ruda;
-  background-color: #EAEAEA;
+  background-image: url('./assets/grass-bg.jpg')
 }
+
+.container{
+  background-color: #f1f1f1;
+}
+/* bg-light bg-opacity-80 bg-gradient */

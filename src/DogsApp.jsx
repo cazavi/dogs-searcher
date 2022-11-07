@@ -16,7 +16,7 @@ export const DogsApp = () => {
 
   return (
     <>
-    <div className="container bg-primary bg-opacity-25 bg-gradient">
+    <div className="container">
       <div className="row justify-content-center">
       <h1 className="header text-center mt-3">DogsPedia</h1>
 {/* <div className="col-3"> */}

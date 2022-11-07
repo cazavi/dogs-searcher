@@ -5,7 +5,7 @@ import { getAllBreeds, getSubBreeds } from "../helpers";
 export const BreedsList = () => {
   const [breed, setBreed] = useState({}); // no usar condicionalmente los hooks
   const [subBreed, setSubBreed] = useState([]);
-  const [selectedBreed, setSelectedBreed] = useState();
+  const [selectedBreed, setSelectedBreed] = useState(['pug']);
 
   const getBreeds = async () => {
     const data = await getAllBreeds();
@@ -47,7 +47,7 @@ export const BreedsList = () => {
       <div className="container">
         <div className="form-group row d-flex justify-content-center">
           <div className="col-sm-auto col-12 d-flex justify-content-center">
-            <label for="breedSelect " className="col-form-label mt-2">
+            <label className="col-form-label mt-2">
               Select your favorite dog
             </label>
           </div>

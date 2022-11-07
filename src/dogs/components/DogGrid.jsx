@@ -9,13 +9,13 @@ export const DogGrid = ({breed}) => { //no llamar funciones dentro de componente
   return (
     <>
       {
-        breed && (<h2>You selected: {breed}</h2>)
+        breed && (<h4 className='text-center'>You selected: {breed}</h4>)
       }
       {
-        isLoading && (<h2>Cargando...</h2>)
+        isLoading && (<h3>Cargando...</h3>)
       }
       <div className="container">
-        <div className="row row-cols-sm-4 row-cols-2 justify-content-center">
+        <div className="row row-cols-sm-3 row-cols-2 justify-content-center ">
           {
             images.map((image, url) => (
               <DogItem 
