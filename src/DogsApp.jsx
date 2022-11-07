@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AddBreed, DogGrid, BreedsList } from "./dogs/components";
+import { BreedsList } from "./dogs/components";
 
 export const DogsApp = () => {
   const [breed, setBreed] = useState(["hound"]); // no usar condicionalmente los hooks
@@ -18,25 +18,25 @@ export const DogsApp = () => {
     <>
     <div className="container bg-primary bg-opacity-25 bg-gradient">
       <div className="row justify-content-center">
-      <h1 className="header text-center kalam mt-3">DogsPedia</h1>
+      <h1 className="header text-center mt-3">DogsPedia</h1>
 {/* <div className="col-3"> */}
 
 {/* </div> */}
-<div className="col-12">
+{/* <div className="col-12 justify-content-center"> */}
       <BreedsList/>
 
-      <AddBreed
+      {/* <AddBreed
         onNewBreed={onAddBreed}
-      />
-        {breed.map((breed) => (
+      /> */}
+        {/* {breed.map((breed) => (
           //no usar index como key porque por i react relaciona que elemento se elimina etc
           <DogGrid 
             key={breed}
             breed={breed}
           />
           ))
-        }
-</div>
+        } */}
+{/* </div> */}
 </div>
       </div>
 
