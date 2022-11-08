@@ -51,7 +51,7 @@ export const BreedsList = () => {
               Select your favorite dog
             </label>
           </div>
-          <div className="col-sm-auto col-6 d-flex justify-content-center">
+          <div className="col-sm-auto col-12 d-flex justify-content-center">
             <select
               id="breedSelect"
               onChange={handleChangeBreed}
@@ -65,7 +65,7 @@ export const BreedsList = () => {
               ))}
             </select>
           </div>
-          <div className="col-sm-auto col-6 d-flex justify-content-center">
+          <div className="col-sm-auto col-12 d-flex justify-content-center">
             <select
               onChange={handleChangeSubBreed}
               className=" bg-danger bg-gradient bg-opacity-50 form-select-sm m-3"

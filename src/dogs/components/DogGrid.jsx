@@ -8,9 +8,17 @@ export const DogGrid = ({breed}) => { //no llamar funciones dentro de componente
 
   return (
     <>
+    <div className="row">
+<div className="col-12 d-flex justify-content-center ">
+
+    <div className="card col-4 bg-success bg-opacity-50 bg-gradient">
       {
-        breed && (<h4 className='text-center'>You selected: {breed}</h4>)
+        breed && (<h4 className='text-center my-2'>You selected: {breed}</h4>)
       }
+
+    </div>
+    </div>
+</div>
       {
         isLoading && (<h3>Cargando...</h3>)
       }

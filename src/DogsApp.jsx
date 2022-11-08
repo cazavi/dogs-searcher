@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BreedsList } from "./dogs/components";
+import  logo  from "./public/logo.png";
 
 export const DogsApp = () => {
   const [breed, setBreed] = useState(["hound"]); // no usar condicionalmente los hooks
@@ -18,11 +19,11 @@ export const DogsApp = () => {
     <>
     <div className="container">
       <div className="row justify-content-center">
-      <h1 className="header text-center mt-3">DogsPedia</h1>
-{/* <div className="col-3"> */}
+        <div className="col-4">
 
-{/* </div> */}
-{/* <div className="col-12 justify-content-center"> */}
+      <img src={logo} className="img-fluid w-100"/>
+        </div>
+
       <BreedsList/>
 
       {/* <AddBreed
