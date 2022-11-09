@@ -46,7 +46,7 @@ export const SubBreedSelect = ({ breed }) => {
           className=" bg-danger bg-gradient bg-opacity-50 form-select-sm m-3"
         >
           <option defaultValue>Choose a sub-breed</option>
-          {selectedSubBreed.map((dogs, index) => (
+          {subBreed.map((dogs, index) => (
             <option value={dogs} key={index}>
               {dogs}
             </option>
