@@ -1,3 +1,3 @@
-export * from './DogGrid';
+export * from './SubBreedSelect';
 export * from './DogItem';
 export * from './BreedsList';
