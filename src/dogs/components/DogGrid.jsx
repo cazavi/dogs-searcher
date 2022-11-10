@@ -1,27 +1,22 @@
 import { useFetch } from "..";
 import { DogItem } from ".";
-import loading from "../../public/loading.gif";
+import { Loading } from ".";
 
-export const DogGrid = ({ subBreed, breed }) => {
-  const { images,pics, isLoading } = useFetch(breed, subBreed);
-  console.log("PICS",pics)
+export const DogGrid = ({ breed }) => {
+  const { images } = useFetch(breed);
 
   return (
     <div className="row">
       <div className="col-12 d-flex justify-content-center ">
-        <div className="card col-3 bg-success bg-opacity-50 bg-gradient">
+        <div className="col-3 bg-success bg-opacity-10 border border-success rounded">
           {breed && (
             <h6 className="text-center my-2">
-              <small>You selected: {breed}</small>{" "}
+              <small>You selected: {breed}</small>
             </h6>
           )}
         </div>
       </div>
-      <div className="col-12 d-flex justify-content-center">
-        {isLoading && (
-          <img src={loading} alt="loading" className="img-fluid w-25" />
-        )}
-      </div>
+      <Loading breed={breed}/>
       <div className="container">
         <div className="row row-cols-sm-3 row-cols-2 justify-content-center ">
           { 

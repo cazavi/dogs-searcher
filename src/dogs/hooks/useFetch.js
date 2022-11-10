@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { getDogsByBreed, getSubBreedsImages } from "../helpers";
+import { getDogsByBreed } from "../services";
 
-export const useFetch = (breed, subBreed) => {
+export const useFetch = (breed) => {
 
   const [images, setImages]=useState([]);
-  const [pics, setPics]=useState([]);
+  // const [pics, setPics]=useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   //Get dog's breeds images
@@ -15,20 +15,20 @@ export const useFetch = (breed, subBreed) => {
   }
 
     //Get dog's sub-breeds images
-  const getSubImages = async() =>{
-    const subImages = await getSubBreedsImages(breed, subBreed);
-    setPics(subImages)
-    setIsLoading(false);
-  }
+  // const getSubImages = async() =>{
+  //   const subImages = await getSubBreedsImages(breed, subBreed);
+  //   setPics(subImages)
+  //   setIsLoading(false);
+  // }
 
   useEffect(() => {
     getImages();
-    getSubImages();
+    // getSubImages();
   }, []);
 
   return{
     images,
-    pics,
+    // pics,
     isLoading
   }
 }

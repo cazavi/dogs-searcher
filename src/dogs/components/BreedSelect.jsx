@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { SubBreedSelect } from ".";
+import { DogGrid } from ".";
 import { getAllBreeds } from "..";
 
 export const BreedSelect = () => {
@@ -47,7 +47,8 @@ export const BreedSelect = () => {
           </div>
         </div>
         <div className="col-sm-auto p-0 col-12 d-flex justify-content-center m-0">
-          <SubBreedSelect key={selectedBreed} breed={selectedBreed} />
+          {/* <SubBreedSelect key={selectedBreed} breed={selectedBreed} /> */}
+          <DogGrid  key={selectedBreed} breed={selectedBreed} />
         </div>
       </div>
     </>

@@ -9,15 +9,12 @@ export const SubBreedSelect = ({ breed }) => {
 
   const fetchSubBreeds = async () => {
     const subDogs = await getSubBreeds(breed);
-    // console.log(pics);
     setSubBreed(subDogs);
   };
-  // console.log("SUBRAZA", subBreed);
 
   const handleChangeSubBreed = ({ target }) => {
     const selected = target.value
     setSelectedSubBreed(selected);
-    // console.log("SELECCIONASTE SUB-RAZA:", selected);
   };
 
   useEffect(() => {
