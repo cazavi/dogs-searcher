@@ -1,10 +1,10 @@
-import { useFetch } from "../hooks/useFetch";
-import { DogItem } from "./DogItem";
+import { useFetch } from "..";
+import { DogItem } from ".";
 import loading from "../../public/loading.gif";
 
 export const DogGrid = ({ subBreed, breed }) => {
-  const { images, isLoading } = useFetch(subBreed);
-  // console.log("PICS",pics)
+  const { images,pics, isLoading } = useFetch(breed, subBreed);
+  console.log("PICS",pics)
 
   return (
     <div className="row">
@@ -24,17 +24,25 @@ export const DogGrid = ({ subBreed, breed }) => {
       </div>
       <div className="container">
         <div className="row row-cols-sm-3 row-cols-2 justify-content-center ">
-          {
-            images.map((pic, url) => (
-              <DogItem className="col" key={url} {...pic} />
+          { 
+          //Manejar si vienen imágenes de sub-breed mapear y mostrar
+          //sino mostrar las de breed
+          // pics ?
+          //   (pics.map((pic, url) => (
+          //     <DogItem 
+          //       className="col" 
+          //       key={url} 
+          //       {...pic} 
+          //     />
+          //   )))
+          //   : 
+            images.map((image, url) => (
+              <DogItem
+                className="col"
+                key={url}
+                {...image}
+              />
             ))
-            // : (images.map((image, url) => (
-            //   <DogItem
-            //   className="col"
-            //   key={url}
-            //   {...image}
-            // />
-            // )))
           }
         </div>
       </div>

@@ -1,36 +1,27 @@
 import { useEffect, useState } from "react";
-import { getSubBreeds } from "../helpers";
-import { DogGrid } from "./DogGrid";
+import { getSubBreeds } from "..";
+import { DogGrid } from ".";
 
 export const SubBreedSelect = ({ breed }) => {
-  //no llamar funciones dentro de componentes porque sino se llamará cada vez que se renderice
 
-  // const {images, pics, isLoading} = useFetch(breed);
-  // console.log("PICS",pics)
   const [subBreed, setSubBreed] = useState([breed]);
   const [selectedSubBreed, setSelectedSubBreed] = useState([]);
 
   const fetchSubBreeds = async () => {
-    // const {pics} = getSubBreeds(breed)
-    const pics = await getSubBreeds(breed);
-
-    // console.log("SUBBREED", pics);
-    console.log(pics);
-    setSubBreed(pics);
+    const subDogs = await getSubBreeds(breed);
+    // console.log(pics);
+    setSubBreed(subDogs);
   };
-  console.log("SUBRAZA", subBreed);
+  // console.log("SUBRAZA", subBreed);
 
   const handleChangeSubBreed = ({ target }) => {
-    // setSelectedBreed(target.value)
-    setSelectedSubBreed(target.value);
-    console.log("SELECCIONASTE SUB-RAZA:", target.value);
-    // console.log(, selectedBreed)
+    const selected = target.value
+    setSelectedSubBreed(selected);
+    // console.log("SELECCIONASTE SUB-RAZA:", selected);
   };
 
   useEffect(() => {
-    // getBreeds();
     fetchSubBreeds();
-    // return{} //este retorno es para hacer una limpieza
   }, []);
 
   return (
@@ -53,7 +44,7 @@ export const SubBreedSelect = ({ breed }) => {
           ))}
         </select>
       </div>
-      <DogGrid breed={breed} subBreed={subBreed} />
+      <DogGrid  key={subBreed} breed={breed} subBreed={subBreed} selectedSubBreed={selectedSubBreed} />
     </div>
   );
 };

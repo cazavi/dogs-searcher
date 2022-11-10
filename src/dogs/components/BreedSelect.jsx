@@ -1,51 +1,27 @@
 import { useState, useEffect } from "react";
 import { SubBreedSelect } from ".";
-import { getAllBreeds, getSubBreeds } from "../helpers";
-import { DogGrid } from "./DogGrid";
+import { getAllBreeds } from "..";
 
-export const BreedsList = () => {
-  const [breed, setBreed] = useState({}); // no usar condicionalmente los hooks
-  // const [subBreed, setSubBreed] = useState([]);
+export const BreedSelect = () => {
+  const [breed, setBreed] = useState({});
   const [selectedBreed, setSelectedBreed] = useState(["pug"]);
 
   const getBreeds = async () => {
     const data = await getAllBreeds();
-    // const dogs = Object.keys(data)
     setBreed(data);
   };
-  const fetchBreeds = Object.keys(breed);
-
-  // console.log(subBreed)
+  
+  const breedsKeys = Object.keys(breed);
 
   const handleChangeBreed = ({ target }) => {
     setSelectedBreed(target.value);
-    // setBreed(target.value)
     console.log("SELECCIONASTE RAZA:", target.value);
-    // console.log(, selectedBreed)
   };
-
-  // const fetchSubBreeds = async () => {
-  //   // const {pics} = getSubBreeds(breed)
-  //   const pics = await getSubBreeds();
-
-  //   // console.log("SUBBREED", pics);
-  //   console.log(pics);
-  //   setSubBreed(pics);
-  // };
-  // console.log("SUBRAZA",subBreed)
-
-  // const handleChangeSubBreed = ({target}) => {
-  //   // setSelectedBreed(target.value)
-  //   // subBreed(selectedBreed)
-  //   console.log("SELECCIONASTE SUB-RAZA:", target.value);
-  //   // console.log(, selectedBreed)
-  // };
 
   useEffect(() => {
     getBreeds();
-    // fetchSubBreeds();
-    // return{} //este retorno es para hacer una limpieza
   }, []);
+
   return (
     <>
       <div className="container">
@@ -62,7 +38,7 @@ export const BreedsList = () => {
               className="bg-danger bg-gradient bg-opacity-50 form-select-sm m-3"
             >
               <option defaultValue>Choose a breed</option>
-              {fetchBreeds.map((dog, index) => (
+              {breedsKeys.map((dog, index) => (
                 <option value={dog} key={index}>
                   {dog}
                 </option>
